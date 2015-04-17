@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.martenscs.wso2.hello_1.0.0.qualifier.jar" id="net.martenscs.wso2.hello" version="1.0.0.qualifier">
+      <category name="WSO2 RAP Hello Applciation"/>
+   </feature>
+   <category-def name="WSO2 RAP Hello Applciation" label="WSO2 RAP Hello Applciation"/>
+</site>

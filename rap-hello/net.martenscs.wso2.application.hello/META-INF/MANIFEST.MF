@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Base
+Bundle-SymbolicName: net.martenscs.wso2.application.hello
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.martenscs.wso2.application.hello.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.rap.rwt;bundle-version="[2.0.0,3.0.0)"
+Import-Package: org.osgi.framework
+Service-Component: OSGI-INF/contribution.xml

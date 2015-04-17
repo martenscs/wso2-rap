@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.martenscs.wso2.email_1.0.0.qualifier.jar" id="net.martenscs.wso2.email" version="1.0.0.qualifier">
+      <category name="WSO2 RAP Email Applciation"/>
+   </feature>
+   <category-def name="WSO2 RAP Email Applciation" label="WSO2 RAP Email Applciation"/>
+</site>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="mailapp.entrypoints"
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            path="/mail"
+            applicationId="net.martenscs.wso2.application.base.mailapp"
+            id="mailapp.entrypoint">
+      </entrypoint>
+   </extension>
+   <extension
+         id="net.martenscs.wso2.application.base.mailapp"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            thread="main"
+            cardinality="singleton-global"
+            visible="true">
+         <run
+               class="net.martenscs.wso2.application.base.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RAP Perspective"
+            class="net.martenscs.wso2.application.base.Perspective"
+            id="net.martenscs.wso2.application.base.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            name="Message"
+            icon="icons/sample2.gif"
+            class="net.martenscs.wso2.application.base.View"
+            id="net.martenscs.wso2.application.base.view">
+      </view>
+      <view
+            name="Mailboxes"
+            icon="icons/sample3.gif"
+            class="net.martenscs.wso2.application.base.NavigationView"
+            id="net.martenscs.wso2.application.base.navigationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="net.martenscs.wso2.application.base.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="net.martenscs.wso2.application.base.category"
+            id="net.martenscs.wso2.application.base.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Opens a message dialog"
+            categoryId="net.martenscs.wso2.application.base.category"
+            id="net.martenscs.wso2.application.base.openMessage">
+      </command>
+   </extension>
+
+</plugin>
