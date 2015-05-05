@@ -6,4 +6,5 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.martenscs.wso2.application.base.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.rap.ui;bundle-version="[2.0.0,3.0.0)"
+Require-Bundle: org.eclipse.rap.ui;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.equinox.http.registry

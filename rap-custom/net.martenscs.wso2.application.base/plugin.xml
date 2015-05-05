@@ -3,68 +3,83 @@
 <plugin>
 
    <extension
-         id="mailapp.entrypoints"
+         id="app.entrypoints"
          point="org.eclipse.rap.ui.entrypoint">
       <entrypoint
-            path="/mail"
-            applicationId="net.martenscs.wso2.application.base.mailapp"
-            id="mailapp.entrypoint">
+            path="/application"
+            applicationId="net.martenscs.wso2.application.base.app"
+            id="app.entrypoint">
       </entrypoint>
    </extension>
    <extension
-         id="net.martenscs.wso2.application.base.mailapp"
+         id="net.martenscs.wso2.application.base.app"
          point="org.eclipse.core.runtime.applications">
       <application
-            thread="main"
             cardinality="singleton-global"
+            icon="icons/favicon.ico"
+            thread="main"
             visible="true">
          <run
                class="net.martenscs.wso2.application.base.Application">
          </run>
       </application>
    </extension>
+   
+   
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="RAP Perspective"
             class="net.martenscs.wso2.application.base.Perspective"
-            id="net.martenscs.wso2.application.base.perspective">
+            icon="icons/favicon.ico"
+            id="net.martenscs.wso2.application.base.perspective"
+            name="Main Perspective">
       </perspective>
    </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            allowMultiple="true"
-            name="Message"
-            icon="icons/sample2.gif"
-            class="net.martenscs.wso2.application.base.View"
-            id="net.martenscs.wso2.application.base.view">
-      </view>
-      <view
-            name="Mailboxes"
-            icon="icons/sample3.gif"
-            class="net.martenscs.wso2.application.base.NavigationView"
-            id="net.martenscs.wso2.application.base.navigationView">
-      </view>
+      <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="net.martenscs.wso2.application.base.app"
+            name="WSO2 Application">
+         <property
+               name="appName"
+               value="WSO2 Application">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
    </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-      <category
-            name="Mail"
-            id="net.martenscs.wso2.application.base.category">
-      </category>
-      <command
-            name="Open Mailbox"
-            description="Opens a mailbox"
-            categoryId="net.martenscs.wso2.application.base.category"
-            id="net.martenscs.wso2.application.base.open">
-      </command>
-      <command
-            name="Open Message Dialog"
-            description="Opens a message dialog"
-            categoryId="net.martenscs.wso2.application.base.category"
-            id="net.martenscs.wso2.application.base.openMessage">
-      </command>
+    <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  icon="icons/cancel.gif"
+                  label="Exit">
+            </command>
+         </menu>
+         <menu
+               id="window"
+               label="Window">
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="Preferances"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
-
+    <extension
+          point="org.eclipse.equinox.http.registry.resources">
+       <resource
+             alias="net.martenscs.wso2.application.base.resource"
+             base-name="/rwt-resources/generated"
+             httpcontextId="/rwt-resources/generated">
+       </resource>
+    </extension>
 </plugin>

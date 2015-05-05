@@ -7,12 +7,12 @@
          point="org.eclipse.rap.ui.entrypoint">
       <entrypoint
             path="/mail"
-            applicationId="net.martenscs.wso2.application.base.mailapp"
+            applicationId="net.martenscs.wso2.application.mailapp"
             id="mailapp.entrypoint">
       </entrypoint>
    </extension>
    <extension
-         id="net.martenscs.wso2.application.base.mailapp"
+         id="net.martenscs.wso2.application.mailapp"
          point="org.eclipse.core.runtime.applications">
       <application
             thread="main"
@@ -28,7 +28,7 @@
       <perspective
             name="RAP Perspective"
             class="net.martenscs.wso2.application.email.Perspective"
-            id="net.martenscs.wso2.application.base.perspective">
+            id="net.martenscs.wso2.application.email.perspective">
       </perspective>
    </extension>
    <extension
@@ -38,32 +38,32 @@
             name="Message"
             icon="icons/sample2.gif"
             class="net.martenscs.wso2.application.email.View"
-            id="net.martenscs.wso2.application.base.view">
+            id="net.martenscs.wso2.application.email.view">
       </view>
       <view
             name="Mailboxes"
             icon="icons/sample3.gif"
             class="net.martenscs.wso2.application.email.NavigationView"
-            id="net.martenscs.wso2.application.base.navigationView">
+            id="net.martenscs.wso2.application.email.navigationView">
       </view>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <category
             name="Mail"
-            id="net.martenscs.wso2.application.base.category">
+            id="net.martenscs.wso2.application.email.category">
       </category>
       <command
             name="Open Mailbox"
             description="Opens a mailbox"
-            categoryId="net.martenscs.wso2.application.base.category"
-            id="net.martenscs.wso2.application.base.open">
+            categoryId="net.martenscs.wso2.application.email.category"
+            id="net.martenscs.wso2.application.email.open">
       </command>
       <command
             name="Open Message Dialog"
             description="Opens a message dialog"
-            categoryId="net.martenscs.wso2.application.base.category"
-            id="net.martenscs.wso2.application.base.openMessage">
+            categoryId="net.martenscs.wso2.application.email.category"
+            id="net.martenscs.wso2.application.email.openMessage">
       </command>
    </extension>
 
